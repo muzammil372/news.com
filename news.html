@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+  <meta charset="UTF-8" />
+  <title>News Details</title>
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jinnah Times">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+
+</head>
+
+<header class="site-header">
+  <div class="logo-container">
+        <button id="menuBtn" class="menu-btn" aria-label="مینیو کھولیں">☰</button>
+    <img src="logo-removebg-preview.png" alt="Jinnah Times Logo" />
+  </div>
+  <nav class="main-navbar">
+    <ul>
+      <li><a href="#" >صفحۂ اول</a></li>
+      <li><a href="tazatarin.html">تازہ ترین</a></li>
+
+      <li><a href="pakistan.html">پاکستان</a></li>
+      <li><a href="#">انٹرنیشنل</a></li>
+      <li><a href="#">کھیل</a></li>
+      <li><a href="#">شوبز</a></li>
+      <li><a href="#">ویڈیوز</a></li>
+      <li><a href="#">مزید</a></li>
+    </ul>
+    <!-- Hamburger for mobile only -->
+
+  </nav>
+</header>
+<body>
+  <div id="news-detail"></div>
+  <script>
+    // Get slug from URL
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+
+    fetch('news.json')
+      .then(response => response.json())
+      .then(data => {
+        const news = data.find(n => n.slug === slug);
+        const container = document.getElementById('news-detail');
+        if (news) {
+          container.innerHTML = `
+            <div class="news-card">
+              <img src="${news.image}" alt="news image" />
+              <div class="news-content">
+                <h2>${news.title}</h2>
+                <p>${news.content}</p>
+                <small>${news.date}</small>
+                <a href="index.html">Back to Home</a>
+              </div>
+            </div>
+          `;
+        } else {
+          container.innerHTML = "<p>News not found.</p>";
+        }
+      });
+  </script>
+</body>
+</html>n
