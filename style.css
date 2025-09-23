@@ -465,7 +465,7 @@ body, html {
   right: 10px;
   display: flex;
   gap: 8px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
@@ -483,10 +483,6 @@ body, html {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.share-icons a:hover {
-  background: #007bff;
-  color: white;
-}
 
 .share-icons a i {
   font-size: 16px;  /* icons ka size fix */
@@ -503,10 +499,7 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-.share-icons svg:hover {
-  transform: scale(1.2);
-  fill: #ffffff; /* hover pe blue */
-}
+
 .share-icons a {
   background: white;
   border-radius: 50%;
