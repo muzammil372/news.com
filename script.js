@@ -186,7 +186,7 @@ newsCard.classList.add("news-card", "small");
   <div class="image-wrapper"> 
     <img src="${item.image}" alt="${item.title}">
 <div class="share-icons">
-  <a href="https://wa.me/?text=${encodeURIComponent(item.title)}%20${encodeURIComponent('https://yourdomain.com/news.html?slug=' + item.slug)}" target="_blank" title="Share on WhatsApp">
+  <a href="https://wa.me/?text=${encodeURIComponent(item.title)}%20${encodeURIComponent('https://muzammil372.github.io/news.html?slug=' + item.slug)}" target="_blank" title="Share on WhatsApp">
    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 448 512">
       <path d="M380.9 97.1C339-13.4 204.3-31.9 115.4 44.5 41.3 106.4 23.3 214.4 68.7 298.1l-20.4 74.6c-3.3 12 8.2 22.6 19.8 17.9l72.8-30.5c65.2 35.1 146.2 24.7 199.6-30.4 77.5-82.8 59.8-228.2-35.6-278.6z"/>
     </svg>
